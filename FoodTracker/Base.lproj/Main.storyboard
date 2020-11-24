@@ -16,8 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Tuo-QP-Zrw">
-                                <rect key="frame" x="20" y="64" width="374" height="428.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="Tuo-QP-Zrw">
+                                <rect key="frame" x="20" y="64" width="374" height="446.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dv4-de-nMC">
                                         <rect key="frame" x="0.0" y="0.0" width="86" height="20.5"/>
@@ -26,27 +26,32 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter meal name." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vtp-zZ-B9R">
-                                        <rect key="frame" x="0.0" y="28.5" width="374" height="34"/>
+                                        <rect key="frame" x="0.0" y="34.5" width="374" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ed-6B-Acx">
-                                        <rect key="frame" x="0.0" y="70.5" width="148" height="30"/>
+                                        <rect key="frame" x="0.0" y="82.5" width="148" height="30"/>
                                         <state key="normal" title="Set Default Label text"/>
                                         <connections>
                                             <action selector="setDefaultLabelText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T0h-xK-mXw"/>
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="jAH-5F-8aw">
-                                        <rect key="frame" x="0.0" y="108.5" width="320" height="320"/>
+                                        <rect key="frame" x="0.0" y="126.5" width="320" height="320"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="jAH-5F-8aw" secondAttribute="height" multiplier="1:1" id="Dsz-mW-u8n"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="h4b-lD-Q3a" appends="YES" id="Z73-tn-nIx"/>
+                                        </connections>
                                     </imageView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="dv4-de-nMC" firstAttribute="top" secondItem="Tuo-QP-Zrw" secondAttribute="top" id="004-7z-c6e"/>
                                     <constraint firstAttribute="trailing" secondItem="Vtp-zZ-B9R" secondAttribute="trailing" id="LHL-NV-aEc"/>
-                                    <constraint firstItem="jAH-5F-8aw" firstAttribute="top" secondItem="5ed-6B-Acx" secondAttribute="bottom" constant="8" id="osV-JC-I3m"/>
+                                    <constraint firstItem="dv4-de-nMC" firstAttribute="leading" secondItem="Tuo-QP-Zrw" secondAttribute="leading" id="NN2-I3-9Vd"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -61,11 +66,17 @@
                     <connections>
                         <outlet property="mealNameLabel" destination="dv4-de-nMC" id="sF5-vj-VDc"/>
                         <outlet property="nameTextField" destination="Vtp-zZ-B9R" id="AEN-Hy-2HD"/>
+                        <outlet property="photoImageView" destination="jAH-5F-8aw" id="idQ-8w-Zny"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="h4b-lD-Q3a">
+                    <connections>
+                        <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="Vek-fe-RHA"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="139" y="111"/>
+            <point key="canvasLocation" x="137.68115942028987" y="110.49107142857143"/>
         </scene>
     </scenes>
     <resources>
