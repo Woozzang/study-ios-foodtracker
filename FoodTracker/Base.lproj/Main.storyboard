@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="Tuo-QP-Zrw">
-                                <rect key="frame" x="20" y="64" width="374" height="446.5"/>
+                                <rect key="frame" x="20" y="64" width="374" height="494.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dv4-de-nMC">
                                         <rect key="frame" x="0.0" y="0.0" width="86" height="20.5"/>
@@ -37,8 +37,13 @@
                                             <action selector="setDefaultLabelText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T0h-xK-mXw"/>
                                         </connections>
                                     </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Describe meal." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mG8-O6-VZM">
+                                        <rect key="frame" x="0.0" y="126.5" width="374" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="jAH-5F-8aw">
-                                        <rect key="frame" x="0.0" y="126.5" width="320" height="320"/>
+                                        <rect key="frame" x="0.0" y="174.5" width="320" height="320"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="jAH-5F-8aw" secondAttribute="height" multiplier="1:1" id="Dsz-mW-u8n"/>
@@ -52,6 +57,8 @@
                                     <constraint firstItem="dv4-de-nMC" firstAttribute="top" secondItem="Tuo-QP-Zrw" secondAttribute="top" id="004-7z-c6e"/>
                                     <constraint firstAttribute="trailing" secondItem="Vtp-zZ-B9R" secondAttribute="trailing" id="LHL-NV-aEc"/>
                                     <constraint firstItem="dv4-de-nMC" firstAttribute="leading" secondItem="Tuo-QP-Zrw" secondAttribute="leading" id="NN2-I3-9Vd"/>
+                                    <constraint firstItem="mG8-O6-VZM" firstAttribute="leading" secondItem="Tuo-QP-Zrw" secondAttribute="leading" id="WAC-QR-21W"/>
+                                    <constraint firstAttribute="trailing" secondItem="mG8-O6-VZM" secondAttribute="trailing" id="a9y-Bx-50G"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -64,6 +71,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="descriptionTextField" destination="mG8-O6-VZM" id="9DA-4h-x9C"/>
                         <outlet property="mealNameLabel" destination="dv4-de-nMC" id="sF5-vj-VDc"/>
                         <outlet property="nameTextField" destination="Vtp-zZ-B9R" id="AEN-Hy-2HD"/>
                         <outlet property="photoImageView" destination="jAH-5F-8aw" id="idQ-8w-Zny"/>

@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var mealNameLabel: UILabel!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var photoImageView: UIImageView!
-    
+    @IBOutlet weak var descriptionTextField: UITextField!
     
     //NOTE: 메서드를 통하지 않고 직접 IBOutlet 에 접근할 수 없다.
     
@@ -22,6 +22,7 @@ class ViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         nameTextField.delegate = self
+        descriptionTextField.delegate = self
     }
     
     //MARK: Actions
@@ -38,6 +39,7 @@ class ViewController: UIViewController {
         if nameTextField.isFirstResponder {
             nameTextField.resignFirstResponder()
         }
+        
         
         let imagePickerController = UIImagePickerController()
         
@@ -62,13 +64,20 @@ extension ViewController: UITextFieldDelegate {
     //MARK: UITextFieldDelegate
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
         //Hide the keyboard.
         textField.resignFirstResponder()
         
+        guard textField === nameTextField else {
+            return true
+        }
+        
+        descriptionTextField.becomeFirstResponder()
         return true
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
+        
         mealNameLabel.text = textField.text
     }
 }
