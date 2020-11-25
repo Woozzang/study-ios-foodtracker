@@ -37,7 +37,15 @@ class RatingControl: UIStackView {
     button.heightAnchor.constraint(equalToConstant: 44.0).isActive = true
     button.widthAnchor.constraint(equalToConstant: 44.0).isActive = true
     
+    // Setup the button action
+    button.addTarget(self, action: #selector(RatingControl.ratingButtonTapped(button:)), for: .touchUpInside)
+    
     // Add the button ot the stack
     addArrangedSubview(button)
+  }
+  
+  //MARK: Button Action
+  @objc func ratingButtonTapped(button: UIButton) {
+    print("Button pressed 🇰🇷")
   }
 }
