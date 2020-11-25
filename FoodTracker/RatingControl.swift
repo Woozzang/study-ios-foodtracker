@@ -8,19 +8,36 @@
 import UIKit
 
 class RatingControl: UIStackView {
-    //MARK: Initialization
+  //MARK: Initialization
+  
+  /*
+   For programatically initializing the view
+   */
+  override init(frame: CGRect) {
+    super.init(frame: frame)
+    setupButtons()
+  }
+  
+  /*
+   For loading the view from the storyboard
+   */
+  required init(coder: NSCoder) {
+    super.init(coder: coder)
+    setupButtons()
+  }
+  
+  private func setupButtons() {
     
-    /*
-     For programatically initializing the view
-     */
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-    }
+    // Create the button
+    let button = UIButton()
+    button.backgroundColor = UIColor.systemRed
     
-    /*
-     For loading the view from the storyboard
-     */
-    required init(coder: NSCoder) {
-        super.init(coder: coder)
-    }
+    // Add constraints
+    button.translatesAutoresizingMaskIntoConstraints = false
+    button.heightAnchor.constraint(equalToConstant: 44.0).isActive = true
+    button.widthAnchor.constraint(equalToConstant: 44.0).isActive = true
+    
+    // Add the button ot the stack
+    addArrangedSubview(button)
+  }
 }
