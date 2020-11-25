@@ -16,11 +16,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="Tuo-QP-Zrw">
-                                <rect key="frame" x="20" y="64" width="374" height="494.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="Tuo-QP-Zrw">
+                                <rect key="frame" x="20" y="64" width="374" height="508.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dv4-de-nMC">
-                                        <rect key="frame" x="0.0" y="0.0" width="86" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dv4-de-nMC">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -30,20 +30,13 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ed-6B-Acx">
-                                        <rect key="frame" x="0.0" y="82.5" width="148" height="30"/>
-                                        <state key="normal" title="Set Default Label text"/>
-                                        <connections>
-                                            <action selector="setDefaultLabelText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T0h-xK-mXw"/>
-                                        </connections>
-                                    </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Describe meal." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mG8-O6-VZM">
-                                        <rect key="frame" x="0.0" y="126.5" width="374" height="34"/>
+                                        <rect key="frame" x="0.0" y="82.5" width="374" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="jAH-5F-8aw">
-                                        <rect key="frame" x="0.0" y="174.5" width="320" height="320"/>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="jAH-5F-8aw">
+                                        <rect key="frame" x="27" y="130.5" width="320" height="320"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="jAH-5F-8aw" secondAttribute="height" multiplier="1:1" id="Dsz-mW-u8n"/>
@@ -52,6 +45,14 @@
                                             <outletCollection property="gestureRecognizers" destination="h4b-lD-Q3a" appends="YES" id="Z73-tn-nIx"/>
                                         </connections>
                                     </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="UI0-vT-GaZ" customClass="RatingControl" customModule="FoodTracker" customModuleProvider="target">
+                                        <rect key="frame" x="61" y="464.5" width="252" height="44"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="starCount">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="dv4-de-nMC" firstAttribute="top" secondItem="Tuo-QP-Zrw" secondAttribute="top" id="004-7z-c6e"/>
@@ -60,10 +61,6 @@
                                     <constraint firstItem="mG8-O6-VZM" firstAttribute="leading" secondItem="Tuo-QP-Zrw" secondAttribute="leading" id="WAC-QR-21W"/>
                                     <constraint firstAttribute="trailing" secondItem="mG8-O6-VZM" secondAttribute="trailing" id="a9y-Bx-50G"/>
                                 </constraints>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UI0-vT-GaZ" customClass="RatingControl" customModule="FoodTracker" customModuleProvider="target">
-                                <rect key="frame" x="20" y="546" width="200" height="110"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -79,6 +76,7 @@
                         <outlet property="mealNameLabel" destination="dv4-de-nMC" id="sF5-vj-VDc"/>
                         <outlet property="nameTextField" destination="Vtp-zZ-B9R" id="AEN-Hy-2HD"/>
                         <outlet property="photoImageView" destination="jAH-5F-8aw" id="idQ-8w-Zny"/>
+                        <outlet property="ratingControl" destination="UI0-vT-GaZ" id="lEA-Yc-Bmb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -92,7 +90,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Image" width="218.5" height="156.5"/>
+        <image name="defaultPhoto" width="540" height="540"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
