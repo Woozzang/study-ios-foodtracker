@@ -8,7 +8,7 @@ Meal Tracking App 🍽
 - [Connect the UI to Code (2)](https://woozzang.tistory.com/50)
 
 - [Work with View Controllers(1)](https://woozzang.tistory.com/51)
-- [Work with View Controllers(1)](https://woozzang.tistory.com/55)
+- [Work with View Controllers(2)](https://woozzang.tistory.com/55)
 
 - [Implement a Custom Control (1)](https://woozzang.tistory.com/61?category=909641)
 - [Implement a Custom Control (2)](https://woozzang.tistory.com/64?category=909641)
